@@ -86,10 +86,10 @@
   .tll{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:6px 0 0 86px}
   .narr{margin:8px 2px 0;font-size:15px;min-height:1.4em;color:var(--ink)}
 
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
   @media (max-width:820px){.grid3{grid-template-columns:1fr}}
-  .fact{border-top:2px solid var(--slate);padding-top:12px}
-  .ic{width:36px;height:36px;display:block;margin-bottom:8px;stroke:var(--slate);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fact{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .ic{width:48px;height:48px;padding:11px;border-radius:50%;background:rgba(30,58,95,.10);display:block;margin-bottom:10px;stroke:var(--slate);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .fact b{display:block;font-size:19px;font-weight:600;margin-bottom:3px} .fact p{margin:0;color:var(--muted);font-size:16px}
 
   .two{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;align-items:start}
@@ -125,7 +125,7 @@
   .bubble.ai{background:rgba(30,58,95,.10);border-bottom-left-radius:4px} .bubble.mom{background:var(--line);margin-left:auto;border-bottom-right-radius:4px}
   .summary{margin-top:10px;border-radius:12px;padding:9px 11px;background:rgba(224,161,0,.10);border-left:5px solid var(--warn);font-size:12px} .summary b{display:block;font-size:13px;margin-bottom:3px} .summary div{margin:2px 0}
 
-  .reserve{margin-top:44px;padding:24px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+  .reserve{margin-top:20px;padding:24px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
   @media (max-width:820px){.reserve{grid-template-columns:1fr}}
   .price{font-size:44px;font-weight:500;line-height:1} .price small{font-size:17px;color:var(--muted);margin-left:8px;font-weight:400}
   .reserve p{margin:6px 0 0;color:var(--muted);font-size:16px}
@@ -140,7 +140,7 @@
 <body>
 <main>
   <h1>Know Your Parent Is Okay — Without Watching Them</h1>
-  <p class="sub">Four radar globes on the ceiling. No camera, no microphone, no monthly fee. Silent on a normal day. If she falls, help is on the way in minutes.</p>
+  <p class="sub">Four radar globes on the ceiling. No camera, no microphone, no monthly fee. Silent on a normal day. If she falls, it knows instantly and help is on the way in minutes.</p>
 
   <div class="toggle ui" role="group" aria-label="Choose a Scenario">
     <button id="scNormal" aria-pressed="true">A Normal Tuesday</button>
@@ -187,11 +187,11 @@
 
     <div class="phone card ui" aria-live="polite">
       <div class="ptime" id="ptime">6:00 AM</div>
-      <p class="ptitle">Mom's House</p>
+      <p class="ptitle">Parent's House</p>
       <div class="status ok" id="status"><i class="big"></i><div><b id="sT">All Normal</b><span id="sS">Quiet night. Usual morning.</span></div></div>
       <p class="last" id="last">Last Movement: Bedroom, just now</p>
-      <div class="chain" aria-label="If She Falls: It Calls Mom, Then Alerts You, Then Your Backup"><div class="st" id="c1"><i>1</i>Calls Mom</div><span class="ar">›</span><div class="st" id="c2"><i>2</i>Alerts You</div><span class="ar">›</span><div class="st" id="c3"><i>3</i>Then Dana</div><span class="ar">›</span><div class="st" id="c4"><i>4</i>Then 911</div></div>
-      <div class="alert" id="alert"><b>Someone on the Bathroom Floor</b><p id="alertMsg">Since 6:02 AM. Called her twice. No answer.</p><div class="acts"><span class="pri">Call Mom</span><span>Call 911</span><span>Call Dana</span></div></div>
+      <div class="chain" aria-label="If She Falls: It Calls Parent, Then Alerts You, Then Your Backup"><div class="st" id="c1"><i>1</i>Calls Parent</div><span class="ar">›</span><div class="st" id="c2"><i>2</i>Alerts You</div><span class="ar">›</span><div class="st" id="c3"><i>3</i>Then Neighbor</div><span class="ar">›</span><div class="st" id="c4"><i>4</i>Then 911</div></div>
+      <div class="alert" id="alert"><b>Someone on the Bathroom Floor</b><p id="alertMsg">Since 6:02 AM. Called her twice. No answer.</p><div class="acts"><span class="pri">Call Parent</span><span>Call 911</span><span>Call Neighbor</span></div></div>
       <div class="week">This Week<div class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i class="t"></i></div></div>
       <p class="nothing" id="nothing">On a normal day, it sends nothing.</p>
     </div>
@@ -199,23 +199,22 @@
 
 
 
-  <div class="sec grid3">
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 10l5-2v8l-5-2"/><line x1="3" y1="3" x2="21" y2="21"/></svg><b>Radar, Not a Camera</b><p>Senses shape and motion from the ceiling. Knows standing from lying down. Can't see a face.</p></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><b>Your Parent Says Yes First</b><p>Her home, her call. Nothing goes up without her okay.</p></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><b>Calls Her Before It Calls You</b><p>If she answers and she's fine, you never hear about it.</p></div>
+  <section class="reserve card" id="reserve">
+    <div><div class="price">$249<small>One Time, No Subscription</small></div><p>Four globes, the hub, the app. No payment now. Withdraw anytime.</p></div>
+    <a class="btn" id="reserveBtn" href="#" rel="noopener">Reserve One</a>
+  </section>
+  <div class="feedback ui"><a class="btn ghost" id="feedbackBtn" href="#" rel="noopener">Tell Us What You Think</a><span>Two minutes. Especially if you wouldn't reserve one.</span></div>
+
   </div>
 
   <div class="sec">
     <h2>Safe at Home, on Her Terms</h2>
     <div class="grid3">
-      <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><b>Help Even If She Can't Reach a Phone</b><p>A fall at 3 a.m. gets a response by 3:20, without a button to press.</p></div>
+      <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><b>Help Even If She Can't Reach a Phone</b><p>A fall at 3 a.m. is noticed at 3 a.m. and someone is alerted within a minute, without a button to press.</p></div>
       <div class="fact"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><b>Nothing to Wear, Nothing to Charge</b><p>No pendant, no watch, no reminder that she's being looked after.</p></div>
-      <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><line x1="3" y1="3" x2="21" y2="21"/></svg><b>No One Is Watching</b><p>No video, no minute-by-minute history. What leaves the house: alerts and a short evening summary.</p></div>
-    </div>
-    <div class="grid3" style="margin-top:16px">
       <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><b>Knows Where She Was Last</b><p>Live: one line, Last Movement, Kitchen, 4 min ago. Evening: a five-line summary of her day and the weekly call.</p></div>
-      <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/><path d="M15 3a6 6 0 0 1 6 6M15 7a2 2 0 0 1 2 2"/></svg><b>Can Call 911 for You</b><p>Turn it on, and if no one responds in ten minutes, it calls for help itself.</p></div>
-      <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M12 8v5M12 16h.01"/></svg><b>She's Never Alone With It</b><p>Every alert names a person who's coming: you, Dana, or 911.</p></div>
+      <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/><path d="M15 3a6 6 0 0 1 6 6M15 7a2 2 0 0 1 2 2"/></svg><b>Can Call 911 for You</b><p>Turn it on, and if no one responds within minutes, it calls for help itself.</p></div>
+      <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M12 8v5M12 16h.01"/></svg><b>She's Never Alone With It</b><p>Every alert names a person who's coming: you, the neighbor, or 911.</p></div>
     </div>
   </div>
 
@@ -241,16 +240,16 @@
         <rect x="20" y="20" width="260" height="210" rx="16" fill="var(--floor)"/>
         <rect x="20" y="20" width="260" height="14" fill="var(--wall)"/>
         <text x="150" y="30" text-anchor="middle" font-size="9" fill="var(--floor)" font-family="-apple-system,Segoe UI,Roboto,sans-serif">CEILING</text>
-        <rect x="132" y="34" width="36" height="5" rx="2.5" fill="var(--wall)"/>
-        <path d="M126 39 A24 24 0 0 0 174 39 Z" fill="url(#g)" stroke="var(--line)" stroke-width="1.5"/>
-        <circle cx="150" cy="52" r="3" fill="var(--slate)"/>
+        <rect x="128" y="34" width="44" height="5" rx="2.5" fill="var(--wall)"/>
+        <path d="M120 39 A30 30 0 0 0 180 39 Z" fill="url(#g)" stroke="var(--line)" stroke-width="1.5"/>
+        <circle cx="150" cy="56" r="3" fill="var(--slate)"/>
         <path d="M150 62 L88 215" stroke="var(--slate)" stroke-width="1" opacity=".16"/><path d="M150 62 L212 215" stroke="var(--slate)" stroke-width="1" opacity=".16"/>
         <path d="M112 150 A45 45 0 0 0 188 150" fill="none" stroke="var(--slate)" stroke-width="1.5" opacity=".2"/>
         <line x1="150" y1="72" x2="150" y2="205" stroke="var(--slate)" stroke-width="6" stroke-linecap="round" opacity=".85"/>
         <line x1="150" y1="150" x2="150" y2="205" stroke="var(--slate)" stroke-width="10" stroke-linecap="round" opacity=".85"/>
         <path d="M138 64 A14 14 0 0 0 162 64" fill="none" stroke="var(--slate)" stroke-width="4" opacity=".85"/>
         <circle cx="150" cy="212" r="10" fill="var(--wall)"/>
-        <text x="150" y="238" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="-apple-system,Segoe UI,Roboto,sans-serif">Extendable Stick, in the Box · Globe Smaller Than a Golf Ball</text>
+        <text x="150" y="238" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="-apple-system,Segoe UI,Roboto,sans-serif">Extendable Stick, in the Box · Globe About the Size of a Tennis Ball</text>
       </svg>
     </div>
     <div>
@@ -266,24 +265,24 @@
   <div class="sec">
     <h2>The Whole App: Home, Summary, Alert, History, Setup</h2>
     <div class="screens ui">
-      <div class="scr card"><div class="bar">9:41 AM</div><h4>Mom's House</h4>
+      <div class="scr card"><div class="bar">9:41 AM</div><h4>Parent's House</h4>
         <div class="ms ok"><i></i><div><b>All Normal</b><span>Moving around as usual.</span></div></div>
         <div class="row f" style="margin-top:8px"><span>Last Movement</span><span>Kitchen, 4 min ago</span></div>
         <div class="row"><span>Globes</span><span class="pill">4 of 4 Online</span></div>
         <div class="row"><span>Learning</span><span>Complete</span></div>
         <div style="font-size:12px;color:var(--muted);margin-top:8px">This Week</div><div class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i class="t"></i></div>
         <div class="cap">Home. 364 Days a Year.</div></div>
-      <div class="scr card"><div class="bar">8:00 PM · Evening Summary</div><h4>Mom's Day</h4>
+      <div class="scr card"><div class="bar">8:00 PM · Evening Summary</div><h4>Parent's Day</h4>
         <div class="al f"><b>Up at 6:40</b><span>Usual bathroom, coffee by 7.</span></div>
         <div class="al"><b>Out 10:00 – 11:50</b><span>Front door. Back before lunch.</span></div>
         <div class="al"><b>Kitchen at Noon and 6</b><span>Both meals on schedule.</span></div>
         <div class="al"><b>Settled by 9:00</b><span>Bedroom. All normal.</span></div>
         <div class="al"><b>Sunday Call</b><span>Mentioned her knee twice. Said she's fine.</span></div>
         <div class="cap">Summary. Five Lines, Once a Day.</div></div>
-      <div class="scr card"><div class="bar">6:06 AM</div><h4>Mom's House</h4>
-        <div class="ma"><b>Someone on the Bathroom Floor</b>Since 6:02 AM. Called her twice, no answer. Dana at 6:16, 911 at 6:26, unless someone responds.<div class="acts" style="margin-top:8px"><span class="pri">Call Mom</span><span>Call 911</span><span>I'm on It</span></div></div>
+      <div class="scr card"><div class="bar">6:03 AM</div><h4>Parent's House</h4>
+        <div class="ma"><b>Someone on the Bathroom Floor</b>Since 6:02 AM. Called instantly, no answer. Neighbor at 6:05, 911 at 6:08, unless someone responds.<div class="acts" style="margin-top:8px"><span class="pri">Call Parent</span><span>Call 911</span><span>I'm on It</span></div></div>
         <div class="row" style="margin-top:8px"><span>Last Movement</span><span>Bathroom, 6:02 AM</span></div>
-        <div class="row"><span>Backup</span><span>Dana · Standing By</span></div>
+        <div class="row"><span>Backup</span><span>Neighbor · Standing By</span></div>
         <div class="cap">Alert. The Screen It Exists For.</div></div>
       <div class="scr card"><div class="bar">Alerts</div><h4>This Year</h4>
         <div class="al f"><b><i class="bad">●</i> Sep 12 · Bathroom</b><span>On the floor. No answer. Neighbor went over. 911 not needed.</span></div>
@@ -293,13 +292,13 @@
         <div class="cap">History. Four in a Year. Exceptions Only.</div></div>
       <div class="scr card"><div class="bar">Setup</div><h4>Rooms and People</h4>
         <div class="row f"><span>Bedroom</span><span class="pill">Globe 1</span></div><div class="row"><span>Bathroom</span><span class="pill">Globe 2</span></div><div class="row"><span>Kitchen</span><span class="pill">Globe 3</span></div><div class="row"><span>Living Room</span><span class="pill">Globe 4</span></div>
-        <div class="row"><span>Call Mom First</span><i class="sw"></i></div><div class="row"><span>Backup: Dana (Neighbor)</span><i class="sw"></i></div><div class="row"><span>Weekly Check-In Call</span><i class="sw"></i></div><div class="row"><span>Auto-Call 911 If No One Responds</span><i class="sw"></i></div><div class="row"><span>Evening Summary</span><i class="sw"></i></div><div class="row"><span>Minute-by-Minute Timeline</span><i class="sw off"></i></div>
+        <div class="row"><span>Call Parent First</span><i class="sw"></i></div><div class="row"><span>Backup: Neighbor</span><i class="sw"></i></div><div class="row"><span>Weekly Check-In Call</span><i class="sw"></i></div><div class="row"><span>Auto-Call 911 If No One Responds</span><i class="sw"></i></div><div class="row"><span>Evening Summary</span><i class="sw"></i></div><div class="row"><span>Minute-by-Minute Timeline</span><i class="sw off"></i></div>
         <div class="cap">Setup. Once. Summary On, Timeline Off, 911 Your Choice.</div></div>
     </div>
   </div>
 
   <div class="sec two r">
-    <div class="scr card ui" style="min-height:0"><div class="bar">Sunday · 10:00 AM · Weekly Check-In Call</div><h4>What Mom Hears</h4>
+    <div class="scr card ui" style="min-height:0"><div class="bar">Sunday · 10:00 AM · Weekly Check-In Call</div><h4>What Your Parent Hears</h4>
       <div class="bubble ai">Good morning, Ruth. How did the week go?</div>
       <div class="bubble mom">Oh, fine. Same as always.</div>
       <div class="bubble ai">Anything that felt harder than usual?</div>
@@ -330,11 +329,8 @@
     </ul>
   </div>
 
-  <section class="reserve card" id="reserve">
-    <div><div class="price">$249<small>One Time, No Subscription</small></div><p>Four globes, the hub, the app. No payment now. Withdraw anytime.</p></div>
-    <a class="btn" id="reserveBtn" href="#" rel="noopener">Reserve One</a>
-  </section>
-  <div class="feedback ui"><a class="btn ghost" id="feedbackBtn" href="#" rel="noopener">Tell Us What You Think</a><span>Two minutes. Especially if you wouldn't reserve one.</span></div>
+
+  <div class="sec" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="btn" id="reserveBtn2" href="#" rel="noopener">Reserve One · $249</a><a class="btn ghost" id="feedbackBtn2" href="#" rel="noopener">Tell Us What You Think</a></div>
 
   <footer>Early offer. Price and details are planned, not final. Floor plan, globes, and app screens are illustrations.</footer>
 </main>
@@ -347,7 +343,7 @@
   var R={bed:[115,110],bath:[440,110],kit:[440,290],liv:[135,300],door:[85,372],out:[85,372]};
   var names={bed:'Bedroom',bath:'Bathroom',kit:'Kitchen',liv:'Living Room',door:'Front Door',out:'Out'};
   var normal=[[0,'bed','Asleep. The globes have seen this a hundred mornings.'],[40,'bath','6:40 — Up. Bathroom, the usual twenty minutes.'],[60,'kit','7:00 — Coffee.'],[120,'liv','Morning in the living room.'],[235,'door','9:55 — Front door.'],[240,'out','10:00 — Out. The app shows Out Since 10:00. That\'s all.'],[350,'door','11:50 — Back.'],[360,'kit','Noon. Lunch.'],[420,'liv','Afternoon.'],[660,'kit','Dinner.'],[720,'liv','Evening.'],[900,'bed','9:00 PM — Bed. A normal day: you heard nothing, because nothing happened.']];
-  var wrong=[[0,'bed','Asleep.'],[1,'bath','6:01 — Up. Bathroom.'],[2,'bath','6:02 — A fall. The globe sees a person on the floor.'],[4,'bath','6:04 — Still down. It calls her phone. No answer.'],[6,'bath','6:06 — Second call. No answer. You get the alert.'],[16,'bath','6:16 — No response from you in ten minutes. Dana gets it too.'],[26,'bath','6:26 — No one has responded. Auto-911 is on, so it calls for help itself.'],[30,'bath','Help is on the way. Fall to help: under thirty minutes, even if nobody picked up.']];
+  var wrong=[[0,'bed','Asleep.'],[1,'bath','6:01 — Up. Bathroom.'],[2,'bath','6:02 — A fall. The globe sees a person on the floor and calls her phone instantly.'],[3,'bath','6:03 — No answer. You get the alert.'],[5,'bath','6:05 — No response from you. The neighbor gets it too.'],[8,'bath','6:08 — No one has responded. Auto-911 is on, so it calls for help itself.'],[10,'bath','Help is on the way. Fall to first alert: one minute.']];
   var scenario=normal, wrongMode=false, timer=null;
   var person=document.getElementById('person'), fig=document.getElementById('fig'), still=document.getElementById('still'), outtag=document.getElementById('outtag');
   var status=document.getElementById('status'), sT=document.getElementById('sT'), sS=document.getElementById('sS'), last=document.getElementById('last');
@@ -367,11 +363,11 @@
     still.classList.toggle('on',down); outtag.classList.toggle('on',out);
     last.textContent=down?'Last Movement: Bathroom, 6:02 AM':(out?'Out Since 10:00 AM · Front Door':'Last Movement: '+names[room]+', just now');
     if(wrongMode){
-      if(m>=26)chain('done','done','done','done');else if(m>=16)chain('done','done','done','live');else if(m>=6)chain('done','done','live');else if(m>=4)chain('done','live','');else if(m>=2)chain('live','','');else chain('','','');
-      if(m>=26){set('bad','911 Called','No response from anyone. Auto-911 placed the call.');alertMsg.textContent='Since 6:02 AM. No answer from Mom, you, or Dana. 911 called at 6:26.';alertEl.classList.add('on');nothing.style.visibility='hidden';}
-      else if(m>=16){set('bad','Backup Alerted','No response in ten minutes. Dana was alerted.');alertMsg.textContent='Since 6:02 AM. Called her twice. No answer. Dana alerted 6:16. 911 at 6:26 if no one responds.';alertEl.classList.add('on');nothing.style.visibility='hidden';}
-      else if(m>=6){set('bad','Alert Sent','Someone on the bathroom floor. No answer after two calls.');alertMsg.textContent='Since 6:02 AM. Called her twice. No answer.';alertEl.classList.add('on');nothing.style.visibility='hidden';}
-      else if(m>=2){set('warn','Checking','Possible fall in the bathroom. Calling Mom first.');alertEl.classList.remove('on');nothing.style.visibility='hidden';}
+      if(m>=8)chain('done','done','done','done');else if(m>=5)chain('done','done','done','live');else if(m>=3)chain('done','done','live');else if(m>=2)chain('done','live','');else chain('','','');
+      if(m>=8){set('bad','911 Called','No response from anyone. Auto-911 placed the call.');alertMsg.textContent='Since 6:02 AM. No answer from your parent, you, or the neighbor. 911 called at 6:08.';alertEl.classList.add('on');nothing.style.visibility='hidden';}
+      else if(m>=5){set('bad','Neighbor Alerted','No response from you. The neighbor was alerted.');alertMsg.textContent='Since 6:02 AM. No answer. Neighbor alerted 6:05. 911 at 6:08 if no one responds.';alertEl.classList.add('on');nothing.style.visibility='hidden';}
+      else if(m>=3){set('bad','Alert Sent','Someone on the bathroom floor. No answer.');alertMsg.textContent='Since 6:02 AM. Called instantly. No answer.';alertEl.classList.add('on');nothing.style.visibility='hidden';}
+      else if(m>=2){set('warn','Checking','Fall in the bathroom. Calling your parent now.');alertEl.classList.remove('on');nothing.style.visibility='hidden';}
       else{set('ok','All Normal','Quiet night. Usual morning.');alertEl.classList.remove('on');nothing.style.visibility='visible';}
     }else{
       chain('','','');alertEl.classList.remove('on');nothing.style.visibility='visible';
@@ -380,9 +376,9 @@
     }
   }
   function stop(){if(timer){clearInterval(timer);timer=null;play.textContent='▶ Play';}}
-  function start(){stop();play.textContent='❚❚ Pause';var max=wrongMode?30:960,step=wrongMode?1:10;if(+range.value>=max)range.value=0;
-    timer=setInterval(function(){var v=+range.value+step;if(v>=max){v=max;range.value=v;render(v);stop();return;}range.value=v;render(v);},wrongMode?130:80);}
-  function choose(w){wrongMode=w;scenario=w?wrong:normal;range.max=w?30:960;range.step=w?1:10;range.value=0;stop();
+  function start(){stop();play.textContent='❚❚ Pause';var max=wrongMode?10:960,step=wrongMode?1:10;if(+range.value>=max)range.value=0;
+    timer=setInterval(function(){var v=+range.value+step;if(v>=max){v=max;range.value=v;render(v);stop();return;}range.value=v;render(v);},wrongMode?330:80);}
+  function choose(w){wrongMode=w;scenario=w?wrong:normal;range.max=w?10:960;range.step=w?1:10;range.value=0;stop();
     document.getElementById('scNormal').setAttribute('aria-pressed',String(!w));document.getElementById('scWrong').setAttribute('aria-pressed',String(w));render(0);start();}
   document.getElementById('scNormal').addEventListener('click',function(){choose(false);});
   document.getElementById('scWrong').addEventListener('click',function(){choose(true);});
@@ -395,7 +391,7 @@
     ['6a','8a','10a','12p','2p','4p','6p','8p'].forEach(function(t,i){var x=document.createElementNS(NS,'text');x.setAttribute('x',x0+i*2*cw+2);x.setAttribute('y',y0+days*(ch+gap)+12);x.setAttribute('class','hl');x.textContent=t;svg.appendChild(x);});})();
 
   function wire(id,url){var b=document.getElementById(id);b.setAttribute('href',url);b.setAttribute('target','_blank');}
-  wire('reserveBtn',FORM_URL); wire('feedbackBtn',FEEDBACK_URL);
+  wire('reserveBtn',FORM_URL); wire('feedbackBtn',FEEDBACK_URL); wire('reserveBtn2',FORM_URL); wire('feedbackBtn2',FEEDBACK_URL);
 })();
 </script>
 </body>
