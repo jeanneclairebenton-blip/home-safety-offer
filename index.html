@@ -139,6 +139,15 @@
   .price{font-size:44px;font-weight:500;line-height:1} .price small{font-size:17px;color:var(--muted);margin-left:8px;font-weight:400}
   .reserve p{margin:6px 0 0;color:var(--muted);font-size:16px}
   .btn{display:inline-block;padding:15px 26px;border-radius:12px;background:var(--btn);color:var(--btn-ink);text-decoration:none;font-size:19px;font-weight:600;white-space:nowrap}
+  .choice{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:720px){.choice{grid-template-columns:1fr}}
+  .cbox{padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px}
+  .cbox p{margin:0 0 6px;color:var(--muted);font-size:16px;flex:1}
+  .cbox .btn{align-self:flex-start}
+  .cbox.yes{border-top:4px solid var(--slate)}
+  .cbox.no{border-top:4px solid var(--bad)}
+  .cbox-title{font-size:30px;font-weight:500;line-height:1.1}
+  .btn.no{background:var(--bad);color:#fff}
   .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:500;font-size:16px;padding:11px 16px}
   .code{grid-column:1/-1;font-size:14px;color:var(--muted);margin-top:-6px} .code b{color:var(--ink)} .code.missing{color:var(--warn)}
   .feedback{margin-top:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:15px;color:var(--muted)}
@@ -248,9 +257,17 @@
 
 
 
-  <section class="reserve card" id="reserve">
-    <div><div class="price">$249<small>One Time, No Subscription</small></div><p>Four globes, the hub, the app. No payment now. Withdraw anytime.</p></div>
-    <a class="btn" id="reserveBtn" href="#" rel="noopener">Reserve One</a>
+  <section class="choice" id="reserve">
+    <div class="card cbox yes">
+      <div class="price">$249<small>One Time, No Subscription</small></div>
+      <p>Four globes, the hub, the app. No payment now. Withdraw anytime.</p>
+      <a class="btn" id="reserveBtn" href="#" rel="noopener">Reserve One</a>
+    </div>
+    <div class="card cbox no">
+      <div class="price">$0<small>Not Interested</small></div>
+      <p>Tell us. You're saving us hundreds of thousands of dollars by helping us not move in the wrong direction.</p>
+      <a class="btn no" id="noBtn" href="#" rel="noopener">Not Interested</a>
+    </div>
   </section>
   <div class="feedback ui"><a class="btn ghost" id="feedbackBtn" href="#" rel="noopener">Tell Us What You Think</a><span>Two minutes. Especially if you wouldn't reserve one.</span></div>
 
@@ -364,7 +381,7 @@
   </div>
 
 
-  <div class="sec" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="btn" id="reserveBtn2" href="#" rel="noopener">Reserve One · $249</a><a class="btn ghost" id="feedbackBtn2" href="#" rel="noopener">Tell Us What You Think</a></div>
+  <div class="sec" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="btn" id="reserveBtn2" href="#" rel="noopener">Reserve One · $249</a><a class="btn no" id="noBtn2" href="#" rel="noopener">Not Interested</a><a class="btn ghost" id="feedbackBtn2" href="#" rel="noopener">Tell Us What You Think</a></div>
 
   <footer><b style="display:block;margin-bottom:4px;color:var(--ink)">Disclosure</b>This is a customer validation study by a graduate team at SMU Cox School of Business. The product is not yet built; all images are illustrations. Reserving records your interest at the stated price. No payment, no obligation, withdraw anytime. Your contact details are used only to follow up on this reservation and will never be sold or shared.</footer>
 </main>
@@ -373,6 +390,7 @@
 (function(){
   var FORM_URL="https://docs.google.com/forms/d/e/1FAIpQLSeodnSgLdn9kIeqLCqyKLt0ZXjARxZnF5mudXc6cnllr2sygg/viewform", CODE_FIELD="";
   var FEEDBACK_URL="https://docs.google.com/forms/d/e/1FAIpQLSeqJKiiL5weP8eqIujP-WB3agiNhvTvfN-aiaE_En2IxRCl1w/viewform", FEEDBACK_CODE_FIELD="";
+  var NO_URL="https://forms.gle/qi96N34kSmDCY2cG7";
 
   var R={bed:[115,110],bath:[440,110],kit:[440,290],liv:[135,300],door:[85,372],out:[85,372]};
   var names={bed:'Bedroom',bath:'Bathroom',kit:'Kitchen',liv:'Living Room',door:'Front Door',out:'Out'};
@@ -425,7 +443,7 @@
     ['6a','8a','10a','12p','2p','4p','6p','8p'].forEach(function(t,i){var x=document.createElementNS(NS,'text');x.setAttribute('x',x0+i*2*cw+2);x.setAttribute('y',y0+days*(ch+gap)+12);x.setAttribute('class','hl');x.textContent=t;svg.appendChild(x);});})();
 
   function wire(id,url){var b=document.getElementById(id);b.setAttribute('href',url);b.setAttribute('target','_blank');}
-  wire('reserveBtn',FORM_URL); wire('feedbackBtn',FEEDBACK_URL); wire('reserveBtn2',FORM_URL); wire('feedbackBtn2',FEEDBACK_URL);
+  wire('reserveBtn',FORM_URL); wire('feedbackBtn',FEEDBACK_URL); wire('reserveBtn2',FORM_URL); wire('feedbackBtn2',FEEDBACK_URL); wire('noBtn',NO_URL); wire('noBtn2',NO_URL);
 })();
 </script>
 </body>
